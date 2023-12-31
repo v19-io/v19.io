@@ -23,7 +23,7 @@ export function MainNav() {
         <Icons.Logo className="h-6 w-6" />
         <span className="font-bold inline-block">v19</span>
       </Link>
-      <div className="hidden md:flex w-full items-center justify-center">
+      <div className="absolute hidden md:flex w-full items-center justify-center">
         <NavigationMenu>
           <NavigationMenuList>
             {MAIN_NAV.map((item) => (
