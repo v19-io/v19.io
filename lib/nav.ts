@@ -57,11 +57,11 @@ export const MAIN_NAV: MainNavItems[] = [
         badge: "Coming Soon",
       },
       {
-        title: "Bibli",
+        title: "Pass",
         href: "https://pass.v19.io",
         description:
           "A flexible and secure OAuth/SAML/SSO provider that offers enhanced functionality like user group creation and custom domain management.",
-        Icon: Icons.Bibli,
+        Icon: Icons.Pass,
         disabled: true,
         badge: "Coming Soon",
       },
