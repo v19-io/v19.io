@@ -26,7 +26,7 @@ export const MAIN_NAV: MainNavItems[] = [
       href: "https://kanrimemberships.com",
       description:
         "Streamlined membership management for karate schools, yoga studios, music academies, and more.",
-      Icon: Icons.Pass,
+      Icon: Icons.Kanri,
       badge: "Alpha",
     },
     secondary: [
