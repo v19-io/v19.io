@@ -7,7 +7,7 @@ interface MainNavItem {
   description: string;
   Icon?: Icon;
   disabled?: boolean;
-  badge?: "Beta" | "Coming Soon";
+  badge?: "Alpha" | "Beta" | "Coming Soon";
 }
 
 interface MainNavGroup {
@@ -22,13 +22,12 @@ export const MAIN_NAV: MainNavItems[] = [
   {
     title: "Products",
     primary: {
-      title: "Pass",
-      href: "https://pass.v19.io",
+      title: "Kanri",
+      href: "https://kanrimemberships.com",
       description:
-        "A flexible and secure OAuth/SAML/SSO provider that offers enhanced functionality like user group creation and custom domain management.",
+        "Streamlined membership management for karate schools, yoga studios, music academies, and more.",
       Icon: Icons.Pass,
-      disabled: true,
-      badge: "Coming Soon",
+      badge: "Alpha",
     },
     secondary: [
       {
@@ -59,8 +58,9 @@ export const MAIN_NAV: MainNavItems[] = [
       },
       {
         title: "Bibli",
-        href: "https://bibli.v19.io",
-        description: "Learning management. By students, for students.",
+        href: "https://pass.v19.io",
+        description:
+          "A flexible and secure OAuth/SAML/SSO provider that offers enhanced functionality like user group creation and custom domain management.",
         Icon: Icons.Bibli,
         disabled: true,
         badge: "Coming Soon",

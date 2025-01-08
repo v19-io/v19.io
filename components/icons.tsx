@@ -18,4 +18,5 @@ export {
   IconAbacus as Bibli,
   IconBow as Char,
   IconAlarm as Tock,
+  IconUsers as Kanri,
 } from "@tabler/icons-react";
