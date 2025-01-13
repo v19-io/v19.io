@@ -112,7 +112,7 @@ const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a"> & {
     disabled?: boolean;
-    badge?: "Beta" | "Coming Soon";
+    badge?: "Alpha" | "Beta" | "Coming Soon";
   }
 >(({ className, title, children, disabled, badge, ...props }, ref) => {
   if (disabled) {
