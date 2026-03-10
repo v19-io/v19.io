@@ -154,7 +154,7 @@ function PricingCard({ name, subtitle, price, monthly, description, features, no
   note?: string
 }) {
   const emailSubject = encodeURIComponent(`Quote Request: ${name} Package`)
-  const emailBody = encodeURIComponent(`Hi v19,\n\nI'm interested in getting a quote for the ${name} plan (${subtitle}).\n\nProject details:\n\n`)
+  const emailBody = encodeURIComponent(`Hi,\n\nI'm interested in getting a quote for the ${name} plan (${subtitle}).\n\nProject details:\n\n`)
 
   return (
     <div className="relative flex flex-col p-8 rounded-2xl border border-border bg-card/50 hover:border-primary/50 transition-all duration-300">
