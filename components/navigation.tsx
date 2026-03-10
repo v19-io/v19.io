@@ -39,9 +39,6 @@ export function Navigation() {
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
               Log In
             </Button>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -70,10 +67,7 @@ export function Navigation() {
               <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2">
                 Contact
               </a>
-              <div className="flex flex-col gap-2 pt-4">
-                <Button variant="ghost" className="justify-start">Log In</Button>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Get Started</Button>
-              </div>
+              <Button variant="ghost" className="justify-center items-center text-center w-full">Log In</Button>
             </nav>
           </div>
         )}
