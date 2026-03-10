@@ -1,12 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { 
-  Users, 
-  CreditCard, 
-  Calendar, 
-  ClipboardCheck, 
-  TrendingUp, 
+import {
+  Users,
+  CreditCard,
+  Calendar,
+  ClipboardCheck,
+  TrendingUp,
   MessageSquare,
   ArrowRight,
   Smartphone,
@@ -69,7 +69,7 @@ export function KanriSection() {
             {" "}— Forge Your School's Future
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-            Streamline operations, engage students, and grow your martial arts school with our comprehensive management solution. 
+            Streamline operations, engage students, and grow your martial arts school with our comprehensive management solution.
             Built by practitioners, for practitioners.
           </p>
         </div>
@@ -86,14 +86,6 @@ export function KanriSection() {
           <span className="text-primary font-semibold">...and so much more!</span>{" "}
           Waivers, family accounts, trial management, rank testing, retail POS, and custom reports.
         </p>
-
-        {/* Stats Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-          <StatCard value="C$99" label="Starting at /month" />
-          <StatCard value="∞" label="Unlimited Members" />
-          <StatCard value="24/7" label="Support Included" />
-          <StatCard value="100%" label="Setup Assistance" />
-        </div>
 
         {/* Advanced Features Teaser */}
         <div className="bg-card/50 border border-border rounded-2xl p-8 backdrop-blur-sm">
@@ -114,8 +106,8 @@ export function KanriSection() {
             </div>
           </div>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 group"
               asChild
             >
@@ -136,14 +128,14 @@ export function KanriSection() {
   )
 }
 
-function FeatureCard({ icon: Icon, title, description, index }: { 
-  icon: React.ComponentType<{ className?: string }>, 
-  title: string, 
+function FeatureCard({ icon: Icon, title, description, index }: {
+  icon: React.ComponentType<{ className?: string }>,
+  title: string,
   description: string,
-  index: number 
+  index: number
 }) {
   return (
-    <div 
+    <div
       className="group relative p-6 rounded-xl bg-card/30 border border-border hover:border-primary/50 transition-all duration-300 hover:bg-card/50"
       style={{ animationDelay: `${index * 100}ms` }}
     >
