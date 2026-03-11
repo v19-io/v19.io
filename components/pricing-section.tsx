@@ -8,7 +8,7 @@ const webPricing = [
     name: "Spark",
     subtitle: "Single Page Sites",
     price: "500",
-    monthly: "25",
+    monthly: "20",
     description: "Perfect for landing pages, portfolios, and simple promotional sites.",
     features: [
       "Client CMS editor — edit your content anytime",
@@ -31,7 +31,7 @@ const webPricing = [
     name: "Blaze",
     subtitle: "Multi-Page Sites",
     price: "1,500",
-    monthly: "50",
+    monthly: "40",
     description: "Full business websites with multiple pages, a blog, and richer functionality.",
     features: [
       "Client CMS editor — edit pages, posts, and media",
@@ -51,7 +51,7 @@ const webPricing = [
     name: "Inferno",
     subtitle: "Full-Stack Applications",
     price: "5,000",
-    monthly: "150",
+    monthly: "120",
     description: "Complex web apps with authentication, databases, dashboards, and custom logic.",
     features: [
       "Client CMS editor — full control over content and data",
@@ -112,7 +112,7 @@ export function PricingSection() {
               <div>
                 <p className="font-semibold text-foreground mb-1">Everything Included</p>
                 <p className="text-sm text-muted-foreground">
-                  One monthly price covers hosting, SSL, CDN, uptime monitoring, daily backups, and small updates. <span className="text-foreground font-semibold">$25/mo</span> for Spark, <span className="text-foreground font-semibold">$50/mo</span> for Blaze, <span className="text-foreground font-semibold">$150/mo</span> for Inferno.
+                  One monthly price covers hosting, SSL, CDN, uptime monitoring, daily backups, and small updates. Starting at <span className="text-foreground font-semibold">$20/mo</span> for Spark, <span className="text-foreground font-semibold">$40/mo</span> for Blaze, <span className="text-foreground font-semibold">$120/mo</span> for Inferno.
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ function PricingCard({ name, subtitle, price, monthly, description, features, no
           <span className="text-muted-foreground">CAD</span>
         </div>
         <p className="text-xs text-muted-foreground mt-1">
-          + <span className="text-foreground font-medium">${monthly}/mo</span> hosting & maintenance
+          + hosting & maintenance starting at <span className="text-foreground font-medium">${monthly}/mo</span>
         </p>
       </div>
 
