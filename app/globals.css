@@ -4,50 +4,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.1 0.01 30);
-  --foreground: oklch(0.95 0.01 60);
-  --card: oklch(0.14 0.015 25);
-  --card-foreground: oklch(0.95 0.01 60);
-  --popover: oklch(0.12 0.01 25);
-  --popover-foreground: oklch(0.95 0.01 60);
-  --primary: oklch(0.65 0.22 30);
+  --background: oklch(0.08 0.02 265);
+  --foreground: oklch(0.95 0.01 265);
+  --card: oklch(0.12 0.025 265);
+  --card-foreground: oklch(0.95 0.01 265);
+  --popover: oklch(0.10 0.02 265);
+  --popover-foreground: oklch(0.95 0.01 265);
+  --primary: oklch(0.60 0.24 264);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.18 0.02 25);
-  --secondary-foreground: oklch(0.9 0.02 50);
-  --muted: oklch(0.2 0.015 25);
-  --muted-foreground: oklch(0.6 0.02 40);
-  --accent: oklch(0.75 0.18 50);
-  --accent-foreground: oklch(0.1 0.01 30);
+  --secondary: oklch(0.16 0.03 265);
+  --secondary-foreground: oklch(0.90 0.02 265);
+  --muted: oklch(0.18 0.025 265);
+  --muted-foreground: oklch(0.55 0.04 265);
+  --accent: oklch(0.65 0.22 292);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.55 0.25 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.03 30);
-  --input: oklch(0.18 0.02 25);
-  --ring: oklch(0.65 0.22 30);
-  --chart-1: oklch(0.65 0.22 30);
-  --chart-2: oklch(0.75 0.18 50);
-  --chart-3: oklch(0.55 0.15 20);
-  --chart-4: oklch(0.8 0.12 60);
-  --chart-5: oklch(0.45 0.1 15);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.12 0.01 25);
-  --sidebar-foreground: oklch(0.95 0.01 60);
-  --sidebar-primary: oklch(0.65 0.22 30);
+  --border: oklch(0.20 0.04 265);
+  --input: oklch(0.16 0.03 265);
+  --ring: oklch(0.60 0.24 264);
+  --chart-1: oklch(0.60 0.24 264);
+  --chart-2: oklch(0.65 0.22 292);
+  --chart-3: oklch(0.55 0.20 240);
+  --chart-4: oklch(0.70 0.18 310);
+  --chart-5: oklch(0.50 0.15 230);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.10 0.02 265);
+  --sidebar-foreground: oklch(0.95 0.01 265);
+  --sidebar-primary: oklch(0.60 0.24 264);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.2 0.02 25);
-  --sidebar-accent-foreground: oklch(0.9 0.02 50);
-  --sidebar-border: oklch(0.25 0.03 30);
-  --sidebar-ring: oklch(0.65 0.22 30);
-  --ember: oklch(0.65 0.22 30);
-  --ember-glow: oklch(0.75 0.18 50);
-  --flame: oklch(0.7 0.2 40);
+  --sidebar-accent: oklch(0.18 0.025 265);
+  --sidebar-accent-foreground: oklch(0.90 0.02 265);
+  --sidebar-border: oklch(0.20 0.04 265);
+  --sidebar-ring: oklch(0.60 0.24 264);
 }
 
 @theme inline {
   --font-sans: 'Inter', 'Inter Fallback';
   --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback';
-  --color-ember: var(--ember);
-  --color-ember-glow: var(--ember-glow);
-  --color-flame: var(--flame);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -98,22 +92,35 @@
   }
 }
 
-@keyframes ember-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
 }
 
-@keyframes flame-flicker {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
-  25% { transform: translateY(-2px) scale(1.02); opacity: 1; }
-  50% { transform: translateY(-1px) scale(0.98); opacity: 0.9; }
-  75% { transform: translateY(-3px) scale(1.01); opacity: 0.95; }
+@keyframes glow-drift {
+  0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+  50% { transform: translate(40px, -30px); opacity: 0.75; }
 }
 
-.animate-ember-pulse {
-  animation: ember-pulse 3s ease-in-out infinite;
+.animate-glow-pulse {
+  animation: glow-pulse 6s ease-in-out infinite;
 }
 
-.animate-flame-flicker {
-  animation: flame-flicker 2s ease-in-out infinite;
+.animate-glow-drift {
+  animation: glow-drift 10s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in {
+    animation: none;
+  }
 }

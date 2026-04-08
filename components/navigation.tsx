@@ -1,77 +1,99 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { href: "#kanri", label: "Kanri" },
+  { href: "#services", label: "Web Services" },
+  { href: "#contact", label: "Contact" },
+];
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <a href="#" className="flex items-center group">
-            <span className="text-2xl font-bold tracking-tight text-foreground">
-              v<span className="text-primary">19</span><span className="text-muted-foreground">.io</span>
+    <>
+      {/* Desktop: floating centered pill */}
+      <div className="fixed top-5 inset-x-0 z-50 hidden md:flex justify-center px-4 pointer-events-none">
+        <nav className="pointer-events-auto flex items-center gap-1 px-2 py-1.5 rounded-full border border-border/60 bg-background/85 backdrop-blur-xl shadow-lg shadow-black/20">
+          <a href="#" className="px-3 py-1.5 flex items-center">
+            <span className="text-sm font-bold tracking-tight text-foreground">
+              v19
             </span>
           </a>
+          <div className="w-px h-4 bg-border/80 mx-1" />
+          {navLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium px-3 py-1.5 rounded-full hover:bg-secondary/60"
+            >
+              {label}
+            </a>
+          ))}
+          {/* <div className="w-px h-4 bg-border/80 mx-1" /> */}
+          {/* <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground rounded-full h-8 text-sm px-3"> */}
+          {/*   Log In */}
+          {/* </Button> */}
+          {/* <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-8 text-sm px-4" asChild> */}
+          {/*   <a href="#contact">Get Started</a> */}
+          {/* </Button> */}
+        </nav>
+      </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#kanri" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Kanri
-            </a>
-            <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Web Services
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Pricing
-            </a>
-            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-              Contact
-            </a>
-          </nav>
-
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Log In
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
+      {/* Mobile: standard fixed bar */}
+      <header className="fixed top-0 inset-x-0 z-50 md:hidden bg-background/90 backdrop-blur-xl border-b border-border">
+        <div className="px-4 flex items-center justify-between h-14">
+          <a href="#" className="flex items-center">
+            <span className="text-lg font-bold tracking-tight text-foreground">
+              v19
+            </span>
+          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="p-2 text-foreground"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col gap-4">
-              <a href="#kanri" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2">
-                Kanri
-              </a>
-              <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2">
-                Web Services
-              </a>
-              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2">
-                Pricing
-              </a>
-              <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2">
-                Contact
-              </a>
-              <Button variant="ghost" className="justify-center items-center text-center w-full">Log In</Button>
+          <div className="px-4 py-3 border-t border-border bg-background/95">
+            <nav className="flex flex-col gap-1">
+              {navLinks.map(({ href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-3 px-2 rounded-lg hover:bg-secondary"
+                >
+                  {label}
+                </a>
+              ))}
+              <div className="flex gap-2 mt-2 pt-3 border-t border-border">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex-1 text-muted-foreground"
+                >
+                  Log In
+                </Button>
+                <Button
+                  size="sm"
+                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+                  asChild
+                >
+                  <a href="#contact" onClick={() => setIsOpen(false)}>
+                    Get Started
+                  </a>
+                </Button>
+              </div>
             </nav>
           </div>
         )}
-      </div>
-    </header>
-  )
+      </header>
+    </>
+  );
 }

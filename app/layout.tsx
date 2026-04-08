@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'v19 | Digital Solutions',
-  description: 'v19 delivers Kanri school management software and custom web design services. Streamline operations, engage students, and ignite your digital presence.',
+  description: 'v19 delivers Kanri school management software and custom web design services. Streamline operations, engage students, and grow your digital presence.',
 
 }
 
