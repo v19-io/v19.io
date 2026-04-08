@@ -36,8 +36,8 @@ export function Navigation() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Log In
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground" asChild>
+              <a href="/dashboard">Log In</a>
             </Button>
           </div>
 
@@ -67,7 +67,9 @@ export function Navigation() {
               <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2">
                 Contact
               </a>
-              <Button variant="ghost" className="justify-center items-center text-center w-full">Log In</Button>
+              <Button variant="ghost" className="justify-center items-center text-center w-full" asChild>
+                <a href="/dashboard">Log In</a>
+              </Button>
             </nav>
           </div>
         )}

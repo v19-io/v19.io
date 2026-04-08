@@ -1,31 +1,54 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
-  "name": "v19-io",
-  "compatibility_date": "2025-09-27",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  },
-  "services": [
-    {
-      "binding": "WORKER_SELF_REFERENCE",
-      "service": "v19-io"
-    }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "v19-io-opennext-cache"
-    }
-  ],
-  "images": {
-    "binding": "IMAGES"
-  },
-  "observability": {
-    "enabled": true
-  }
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "v19-io",
+	"compatibility_date": "2025-09-27",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "v19-io"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "CONTENT",
+			"id": "d3315b22dc1c4933830979ed9952606a",
+			"preview_id": "6262b77d8aa24f28a20a355c074082ac"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "v19-io-opennext-cache"
+		},
+		{
+			"binding": "CMS_IMAGES",
+			"bucket_name": "content-images"
+		}
+	],
+	"images": {
+		"binding": "IMAGES"
+	},
+	"send_email": [
+		{
+			"name": "SEND_EMAIL"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "v19-db",
+			"database_id": "b076558a-290b-4122-a64a-26395f13eb16"
+		}
+	]
 }
